@@ -20,7 +20,6 @@ class App extends React.Component {
   render () {
     return (
       <Router>
-          <h1>Joint 4ces App</h1>
           <Header />
             <Switch>
             <Route exact path="/" component={Home} />
