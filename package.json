@@ -18,6 +18,13 @@
     "webpack-cli": "^3.3.12"
   },
   "devDependencies": {
+    "enzyme": "3.10.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "react-test-renderer": "^18.1.0",
     "webpack-dev-server": "^3"
+  },
+  "scripts": {
+    "test": "jest app/javascript",
+    "test:watch": "jest app/javascript --watch"
   }
 }
