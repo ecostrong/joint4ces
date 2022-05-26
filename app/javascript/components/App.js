@@ -19,19 +19,21 @@ import NotFound from "./pages/NotFound";
 class App extends React.Component {
   render () {
     return (
-      <>
-        <h1>Joint 4ces App</h1>
-        <Header />
-        <Home />
-        <BusinessIndex />
-        <BusinessShow />
-        <BusinessEdit />
-        <BusinessNew />
-        <MyListing />
-        <About />
-        <NotFound />
-        <Footer />
-      </>
+      <Router>
+          <h1>Joint 4ces App</h1>
+          <Header />
+          <Home />
+            <Switch>
+              <BusinessIndex />
+              <BusinessShow />
+              <BusinessEdit />
+              <BusinessNew />
+              <MyListing />
+              <About />
+              <NotFound />
+            </Switch>
+          <Footer />
+      </Router>
     );
   }
 }
