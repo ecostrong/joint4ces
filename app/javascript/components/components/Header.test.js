@@ -9,6 +9,7 @@ import Adapter from 'enzyme-adapter-react-16'
 
 // Imports in the component we are going to be testing.
 import Home from '../pages/Home'
+import Header from '../components/Header'
 
 //Allows us to utilize the adapter we import in earlier, allowing us to call and render a component.
 Enzyme.configure({adapter: new Adapter()})
@@ -19,4 +20,15 @@ describe("When Home renders", () => {
       const homeHeading = home.find("h1").text()
       expect(homeHeading).toEqual("Home")
     })
+    
+    it("shows 7 NavItems", () => {
+      const renderedHeader = shallow(<Header />)
+  
+      const renderedNavItems = renderedHeader.find("NavItem")
+  
+      expect(renderedNavItems.length).toEqual(7)
+})
   })
+
+
+  
