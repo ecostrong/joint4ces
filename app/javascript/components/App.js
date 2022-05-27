@@ -20,17 +20,16 @@ class App extends React.Component {
   render () {
     return (
       <Router>
-          <h1>Joint 4ces App</h1>
-          <Header />
-          <Home />
+          <Header {...this.props} />
             <Switch>
-              <BusinessIndex />
-              <BusinessShow />
-              <BusinessEdit />
-              <BusinessNew />
-              <MyListing />
-              <About />
-              <NotFound />
+            <Route exact path="/" component={Home} />
+            <Route path="/businessindex" component={BusinessIndex} />
+            <Route path="/businessshow" component={BusinessShow} />
+            <Route path="/businessedit" component={BusinessEdit} />
+            <Route path="/businessnew" component={BusinessNew} />
+            <Route path="/mylisting" component={MyListing} />
+            <Route path="/about" component={About} />
+            <Route path="/notfound" component={NotFound} />
             </Switch>
           <Footer />
       </Router>
