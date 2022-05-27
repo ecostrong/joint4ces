@@ -32,7 +32,11 @@ export default class Header extends Component {
           {/* <Navbar.Collapse id="basic-navbar-nav"> */}
             <Nav className="ms-auto">
               <NavItem href="#home">Home</NavItem>
-              <NavItem href="#link">My Listing</NavItem>
+              {logged_in &&
+                <NavItem>
+                  <a href="/mylisting">My Listing</a>
+                </NavItem>
+              }
               <NavItem href="#link">Business Listings</NavItem>
               <NavItem href="#link">About</NavItem>
               {logged_in &&
