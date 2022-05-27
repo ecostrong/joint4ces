@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Navbar,Container, Nav,NavDropdown } from 'react-bootstrap'
+// import { Navbar,Container, Nav } from 'react-bootstrap'
 import LOGO from '../assets/joint4ces_logo.jpg'
+import { NavItem, Nav, NavbarBrand, NavbarToggler } from 'reactstrap'
 
 export default class Header extends Component {
   render() {
@@ -15,10 +16,10 @@ export default class Header extends Component {
     console.log("current_user:", current_user)
 
     return (
-      
-      <Navbar bg="light" expand="lg">
-        <Container>
-          <Navbar.Brand to="#home">
+   
+      <Nav bg="light" expand="lg">
+        <div className="container">
+          <NavbarBrand to="#home">
           <img
             src={LOGO}
             width="100"
@@ -26,18 +27,33 @@ export default class Header extends Component {
             className="d-inline-block align-top"
             alt="Joint 4ces logo"
           />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
+          </NavbarBrand>
+          <NavbarToggler aria-controls="basic-navbar-nav" />
+          {/* <Navbar.Collapse id="basic-navbar-nav"> */}
             <Nav className="ms-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#link">My Listing</Nav.Link>
-              <Nav.Link href="#link">Business Listings</Nav.Link>
-              <Nav.Link href="#link">About</Nav.Link>
+              <NavItem href="#home">Home</NavItem>
+              <NavItem href="#link">My Listing</NavItem>
+              <NavItem href="#link">Business Listings</NavItem>
+              <NavItem href="#link">About</NavItem>
+              {logged_in &&
+                <NavItem>
+                  <a href={sign_out_route} className="nav-link">Sign Out</a>
+                </NavItem>
+              }
+              {!logged_in &&
+                <NavItem>
+                  <a href={sign_in_route} className="nav-link">Sign In</a>
+                </NavItem>
+              }
+              {!logged_in &&
+                <NavItem>
+                  <a href={new_user_route} className="nav-link">Sign Up</a>
+                </NavItem>
+              }
             </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+          {/* </Navbar.Collapse> */}
+        </div>
+      </Nav>
     )
   }
 }

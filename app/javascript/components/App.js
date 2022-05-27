@@ -20,7 +20,7 @@ class App extends React.Component {
   render () {
     return (
       <Router>
-          <Header />
+          <Header {...this.props} />
             <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/businessindex" component={BusinessIndex} />
