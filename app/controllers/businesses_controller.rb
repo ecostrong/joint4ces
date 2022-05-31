@@ -8,9 +8,9 @@ class BusinessesController < ApplicationController
     def create
         business = Business.create(business_params)
         if business.valid?
-        render json: business
+            render json: business
         else
-        render json: business.errors, status: :unprocessable_entity
+            render json: business.errors, status: :unprocessable_entity
         end
     end
 
@@ -18,9 +18,9 @@ class BusinessesController < ApplicationController
         business = Business.find(params[:id])
         business.update(business_params)
         if business.valid?
-        render json: business
+            render json: business
         else
-        render json: business.errors, status: :unprocessable_entity
+            render json: business.errors, status: :unprocessable_entity
         end
     end
 
@@ -28,9 +28,9 @@ class BusinessesController < ApplicationController
         business = Business.find(params[:id])
         business.destroy
         if business.valid?
-        render json: business
+            render json: businesses
         else
-        render json: business.errors, status: :unprocessable_entity
+            render json: business.errors, status: :unprocessable_entity
         end
     end
 
