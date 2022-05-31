@@ -17,6 +17,12 @@ import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
 class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      businesses: []
+    }
+  }
   render () {
     return (
       <Router>
