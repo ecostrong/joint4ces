@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "@babel/preset-react": "^7.17.12",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
     "@rails/activestorage": "^6.0.5",
     "@rails/ujs": "^6.0.5",
     "@rails/webpacker": "5.4.3",
