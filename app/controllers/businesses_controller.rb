@@ -5,6 +5,16 @@ class BusinessesController < ApplicationController
         render json: businesses
     end
 
+    def show
+        business = Business.find(params[:id])
+        if business.valid?
+            render json: business
+        else
+            render json: business.errors, status: :unprocessable_entity
+        end
+    end
+
+
     def create
         business = Business.create(business_params)
         if business.valid?

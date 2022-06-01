@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { Container } from 'react-bootstrap'
+// import { Container } from 'reactstrap'
 
 export default class Footer extends Component {
   render() {
     return (
-      <Container fluid>
+      <div>
         <p className="footer">Created By: Amanda, Dustin, Jimmy & Neco</p>
-      </Container>
+      </div>
     )
   }
 }
