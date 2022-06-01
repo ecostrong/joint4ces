@@ -10,7 +10,7 @@ business = Business.find(1)
 
 business.destroy
 
-Business.create business_name: "Test Business", business_description: "The Business Description", business_email_address: "Business email address", business_mailing_address: "business mailing address", business_phone_number: "Business phone number", business_logo: "www.google.com", business_url: "www.google.com", business_status: "Business Status", user_id: 1
+Business.create business_name: "Real Business", business_description: "The Business Description", business_email_address: "Business email address", business_mailing_address: "business mailing address", business_phone_number: "Business phone number", business_logo: "www.google.com", business_url: "www.google.com", business_status: "Business Status", user_id: 1
 
 
  <Row className="cards">
