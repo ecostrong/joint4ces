@@ -38,6 +38,9 @@ export default class Header extends Component {
                   <NavItem>
                     <NavLink to='/'>Home</NavLink>
                   </NavItem>
+                  <NavItem>
+                    <NavLink to='/businessnew'>Create a Business</NavLink>
+                  </NavItem>
                   {logged_in &&
                     <NavItem>
                       <NavLink to='/mylisting'>My Listing</NavLink>
