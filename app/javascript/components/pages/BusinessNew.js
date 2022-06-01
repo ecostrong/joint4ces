@@ -26,6 +26,8 @@ export default class BusinessNew extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+    this.props.createNewBusiness(this.state.form)
+    this.setState({submitted:true})
     console.log("data submitted")
   }
   

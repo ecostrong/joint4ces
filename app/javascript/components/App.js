@@ -39,11 +39,36 @@ class App extends React.Component {
       })
   }
 
-  handleCreateBusiness = (newBusiness) => {
-    console.log(("We did it"))
+  createNewBusiness = (newBusiness) => {
+    fetch("/businesses", {
+      body: JSON.stringify(newBusiness),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+      .then(response => {
+        if (response.status === 422) {
+          alert("There is something wrong with your submission.")
+        }
+        return response.json()
+      })
+      .then(() => {
+        this.indexBusinesses()
+      })
+      .catch(errors => {
+        console.log("create errors:", errors)
+      })
   }
 
   render() {
+    const {
+      logged_in,
+      current_user,
+      sign_in_route,
+      sign_out_route,
+      sign_up_route
+    } = this.props
     return (
       <Router>
         <Header {...this.props} />
@@ -64,7 +89,15 @@ class App extends React.Component {
             }}
           />
           <Route path="/businessedit" component={BusinessEdit} />
-          <Route path="/businessnew" component={BusinessNew} />
+          {/* <Route path="/businessnew" component={BusinessNew} /> */}
+          <Route
+            path="/new" component={BusinessNew}
+            render={(props) =>
+              <BusinessNew
+                createNewBusiness={this.createNewBusiness}
+                current_user={current_user}
+              />}
+          />
           <Route path="/mylisting" component={MyListing} />
           <Route path="/about" component={About} />
           <Route path="/notfound" component={NotFound} />
