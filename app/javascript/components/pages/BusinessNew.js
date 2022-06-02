@@ -108,7 +108,7 @@ export default class BusinessNew extends Component {
             >Add New Business
             </Button>
         </Form>
-        {this.state.submitted && <Redirect to="/businessindex" />}
+        {this.state.submitted && <Redirect to="/mylisting" />}
       </>
     )
   }

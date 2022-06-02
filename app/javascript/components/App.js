@@ -1,11 +1,7 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
 import Header from "./components/Header";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch
-} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import BusinessIndex from "./pages/BusinessIndex";
@@ -18,48 +14,59 @@ import NotFound from "./pages/NotFound";
 
 class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      businesses: []
-    }
+      businesses: [],
+    };
   }
   componentDidMount() {
-    this.indexBusinesses()
+    this.indexBusinesses();
   }
   indexBusinesses = () => {
     fetch("/businesses")
-      .then(response => {
-        return response.json()
+      .then((response) => {
+        return response.json();
       })
-      .then(payload => {
-        this.setState({ businesses: payload })
+      .then((payload) => {
+        this.setState({ businesses: payload });
       })
-      .catch(errors => {
-        console.log("index errors:", errors)
-      })
-  }
+      .catch((errors) => {
+        console.error("index errors:", errors);
+      });
+  };
 
   createNewBusiness = (newBusiness) => {
     fetch("/businesses", {
       body: JSON.stringify(newBusiness),
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      method: "POST"
+      method: "POST",
     })
-      .then(response => {
+      .then((response) => {
         if (response.status === 422) {
-          alert("There is something wrong with your submission.")
+          alert("There is something wrong with your submission.");
         }
-        return response.json()
+        return response.json();
       })
       .then(() => {
-        this.indexBusinesses()
+        this.indexBusinesses();
       })
-      .catch(errors => {
-        console.log("create errors:", errors)
-      })
-  }
+      .catch((errors) => {
+        console.error("create errors:", errors);
+      });
+  };
+
+  deleteBusiness = (id) => {
+    fetch(`/businesses/${id}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "DELETE",
+    })
+      .then(() => this.indexBusinesses())
+      .catch((errors) => console.error("Business delete errors:", errors));
+  };
 
   render() {
     const {
@@ -67,8 +74,8 @@ class App extends React.Component {
       current_user,
       sign_in_route,
       sign_out_route,
-      sign_up_route
-    } = this.props
+      sign_up_route,
+    } = this.props;
     return (
       <Router>
         <Header {...this.props} />
@@ -76,27 +83,52 @@ class App extends React.Component {
           <Route exact path="/" component={Home} />
           <Route
             path="/businessindex"
-            render={(props) => <BusinessIndex businesses={this.state.businesses} />}
+            render={(props) => (
+              <BusinessIndex businesses={this.state.businesses} />
+            )}
           />
           <Route
             path="/business/:id"
             render={(props) => {
-              const id = +props.match.params.id
-              const business = this.state.businesses.find(business => business.id === id)
-              return <BusinessShow business={business} {...props} />
+              const id = +props.match.params.id;
+              const business = this.state.businesses.find(
+                (business) => business.id === id
+              );
+              return <BusinessShow business={business} {...props} />;
             }}
           />
           <Route path="/businessedit" component={BusinessEdit} />
           <Route
             path="/businesses/new"
-            render={(props) =>  {
-              return <BusinessNew
-                createNewBusiness={this.createNewBusiness}
-                current_user={current_user}{...props}
-              />
+            render={(props) => {
+              return (
+                <BusinessNew
+                  createNewBusiness={this.createNewBusiness}
+                  current_user={current_user}
+                  {...props}
+                />
+              );
             }}
           />
-          <Route path="/mylisting" component={MyListing} />
+          {logged_in && (
+            <Route
+              path="/mylisting"
+              render={(props) => {
+                const myBusiness = this.state.businesses.filter(
+                  (business) => business.user_id === current_user.id
+                );
+
+                return (
+                  <MyListing
+                    myBusiness={myBusiness}
+                    deleteBusiness={this.deleteBusiness}
+                    current_user={this.props.current_user}
+                  />
+                );
+              }}
+            />
+          )}
+
           <Route path="/about" component={About} />
           <Route path="/notfound" component={NotFound} />
         </Switch>
@@ -106,4 +138,4 @@ class App extends React.Component {
   }
 }
 
-export default App
+export default App;

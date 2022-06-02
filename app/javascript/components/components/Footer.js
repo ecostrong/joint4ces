@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 export default class Footer extends Component {
   render() {
     return (
-      <div>
+      <div style={{marginTop:"50px"}}>
         <p className="footer">Created By: Amanda, Dustin, Jimmy & Neco</p>
       </div>
     )
