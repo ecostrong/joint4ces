@@ -12,7 +12,7 @@ business.destroy
 
 Business.create business_name: "Real Business", business_description: "The Business Description", business_email_address: "Business email address", business_mailing_address: "business mailing address", business_phone_number: "Business phone number", business_logo: "www.google.com", business_url: "www.google.com", business_status: "Business Status", user_id: 1
 
-
+```javascript
  <Row className="cards">
         { this.props.businesses.map(business => {
         <Col sm="4" key={ business.id }>
@@ -32,3 +32,6 @@ Business.create business_name: "Real Business", business_description: "The Busin
         </Col> 
         })} 
         </Row>
+```
+
+        <!-- git branch -m <old> <new> -->
