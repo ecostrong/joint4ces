@@ -90,7 +90,6 @@ class App extends React.Component {
           <Route
             path="/businesses/new"
             render={(props) =>  {
-              console.log("current user", current_user)
               return <BusinessNew
                 createNewBusiness={this.createNewBusiness}
                 current_user={current_user}{...props}
