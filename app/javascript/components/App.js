@@ -31,7 +31,7 @@ class App extends React.Component {
         this.setState({ businesses: payload });
       })
       .catch((errors) => {
-        console.log("index errors:", errors);
+        console.error("index errors:", errors);
       });
   };
 
@@ -53,7 +53,7 @@ class App extends React.Component {
         this.indexBusinesses();
       })
       .catch((errors) => {
-        console.log("create errors:", errors);
+        console.error("create errors:", errors);
       });
   };
 
@@ -65,7 +65,7 @@ class App extends React.Component {
       method: "DELETE",
     })
       .then(() => this.indexBusinesses())
-      .catch((errors) => console.log("Business delete errors:", errors));
+      .catch((errors) => console.error("Business delete errors:", errors));
   };
 
   render() {
