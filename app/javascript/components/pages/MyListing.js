@@ -12,7 +12,6 @@ export default class MyListing extends Component {
         <Card>
           <Row className="cards">
             {myBusiness?.map((business) => {
-              console.log(business.id);
               return (
                 <Col sm="4" key={business.id}>
                   <div className="my-show-card">
