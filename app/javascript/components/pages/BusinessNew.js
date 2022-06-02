@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap'
+import { Redirect } from 'react-router-dom'
 
 export default class BusinessNew extends Component {
   constructor(props) {
@@ -12,7 +13,8 @@ export default class BusinessNew extends Component {
         business_mail_address: "",
         business_phone_number: "",
         business_logo: "",
-        business_url: ""
+        business_url: "", 
+        user_id: this.props.current_user.id
       },
       submitted: false
     }
@@ -28,14 +30,12 @@ export default class BusinessNew extends Component {
     e.preventDefault()
     this.props.createNewBusiness(this.state.form)
     this.setState({submitted:true})
-    console.log("data submitted")
   }
   
   render() {
-    console.log(this.state.form.business_name)
     return (
       <>
-        <h1>BusinessNew</h1>
+        <h1>Joint4ces Business Listings</h1>
         <Form>
           <FormGroup>
             <Label>Business Name</Label>
@@ -58,7 +58,7 @@ export default class BusinessNew extends Component {
           <FormGroup>
             <Label>Business Email Address</Label>
             <Input 
-              type="email"
+              type="text"
               name="business_email_address"
               onChange={this.handleChange}
               value={this.state.form.business_email_address}
@@ -102,9 +102,13 @@ export default class BusinessNew extends Component {
           </FormGroup>
           <Button 
             name="submit"
+            type="submit"
+            current_user={this.props.current_user}
             onClick={this.handleSubmit}
-            >Add New Business</Button>
+            >Add New Business
+            </Button>
         </Form>
+        {this.state.submitted && <Redirect to="/businessindex" />}
       </>
     )
   }

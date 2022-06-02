@@ -78,8 +78,6 @@ class App extends React.Component {
             path="/businessindex"
             render={(props) => <BusinessIndex businesses={this.state.businesses} />}
           />
-          {/* <Route path="/businessindex" component={BusinessIndex} /> */}
-          {/* <Route path="/businessshow" component={BusinessShow} /> */}
           <Route
             path="/business/:id"
             render={(props) => {
@@ -89,14 +87,15 @@ class App extends React.Component {
             }}
           />
           <Route path="/businessedit" component={BusinessEdit} />
-          {/* <Route path="/businessnew" component={BusinessNew} /> */}
           <Route
-            path="/new" component={BusinessNew}
-            render={(props) =>
-              <BusinessNew
+            path="/businesses/new"
+            render={(props) =>  {
+              console.log("current user", current_user)
+              return <BusinessNew
                 createNewBusiness={this.createNewBusiness}
-                current_user={current_user}
-              />}
+                current_user={current_user}{...props}
+              />
+            }}
           />
           <Route path="/mylisting" component={MyListing} />
           <Route path="/about" component={About} />
