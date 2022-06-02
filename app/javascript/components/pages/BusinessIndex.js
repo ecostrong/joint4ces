@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Card, CardTitle,CardBody, CardSubtitle, CardText, CardLink } from "reactstrap";
 import { NavLink } from 'react-router-dom'
-// import { faHome, faCity } from "@fortawesome/free-solid-svg-icons"
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export default class BusinessIndex extends Component {
   render() {
@@ -23,7 +21,7 @@ export default class BusinessIndex extends Component {
                 </CardBody>
                 <img
                   alt="Card image cap"
-                  src="https://picsum.photos/318/180"
+                  src={business.business_logo}
                   width="100%"
                 />
                 <CardBody>

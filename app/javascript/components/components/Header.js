@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import LOGO from '../assets/joint4ces_logo.jpg'
-import { NavItem, Nav, NavbarBrand, NavbarToggler, Navbar } from 'reactstrap'
+import { NavItem, Nav, NavbarBrand, Navbar } from 'reactstrap'
 import { NavLink } from 'react-router-dom'
 
 export default class Header extends Component {
@@ -32,11 +32,13 @@ export default class Header extends Component {
         >
          
             <div className="container">
-              <NavbarToggler aria-controls="basic-navbar-nav" />
-              {/* <Navbar.Collapse id="basic-navbar-nav"> */}
+
                 <Nav className="ms-auto" bg="light" expand="lg">
                   <NavItem>
                     <NavLink to='/'>Home</NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink to='/businesses/new'>Create a Business</NavLink>
                   </NavItem>
                   {logged_in &&
                     <NavItem>
@@ -65,7 +67,6 @@ export default class Header extends Component {
                   </>
                   }
                 </Nav>
-              {/* </Navbar.Collapse> */}
             </div>
           
         </Navbar>
