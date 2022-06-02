@@ -104,7 +104,7 @@ class App extends React.Component {
               return (
                 <BusinessNew
                   createNewBusiness={this.createNewBusiness}
-                  current_user={current_user}
+                  current_user={this.props.current_user}
                   {...props}
                 />
               );
@@ -112,21 +112,22 @@ class App extends React.Component {
           />
           {logged_in && (
             <Route
-              path="/mylisting"
-              render={(props) => {
-                const myBusiness = this.state.businesses.filter(
-                  (business) => business.user_id === current_user.id
-                );
+            path="/mylisting"
+            render={(props) => {
+              const myBusiness = this.state.businesses.filter(
+                (business) => business.user_id === current_user.id
+              );
 
-                return (
-                  <MyListing
-                    myBusiness={myBusiness}
-                    deleteBusiness={this.deleteBusiness}
-                    current_user={this.props.current_user}
-                  />
-                );
-              }}
-            />
+              return (
+                <MyListing
+                  myBusiness={myBusiness}
+                  deleteBusiness={this.deleteBusiness}
+                  current_user={current_user}
+                  
+                />
+              );
+            }}
+          />
           )}
 
           <Route path="/about" component={About} />

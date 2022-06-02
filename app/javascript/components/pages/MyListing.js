@@ -4,18 +4,18 @@ import {NavLink} from 'react-router-dom'
 
 export default class MyListing extends Component {
   render() {
-    const {business} = this.props
+    const {myBusiness} = this.props
     return (
       <>
         <h3>My Business Listing</h3>
-        {business &&
+        {myBusiness &&
         <Card>
           <Row className="cards">
-            {business?.map((business) => {
+            {myBusiness?.map((business) => {
               return (
                 <Col sm="4" key={business.id}>
                   <div className="my-show-card">
-                    <h1>{business.business_name}</h1>
+                    <h5>{business.business_name}</h5>
                     <h6>{business.business_description}</h6>
                     <h6>{business.business_mailing_address}</h6>
                     <h6>{business.business_email_address}</h6>
