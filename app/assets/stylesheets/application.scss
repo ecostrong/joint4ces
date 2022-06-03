@@ -1,25 +1,78 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-//  @import 'bootstrap';
-//  @import 'bootstrap/dist/css/bootstrap.min.css';
+// Bootstrap, React-Bootstrap, Google Font Imports
+@import "bootstrap";
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap');
 
- .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
- }
+
+// Style guide Variables
+$j4-light-green: #69754d;
+$j4-dark-green: #565e45;
+$j4-light-orange: #ba6e27;
+$j4-dark-orange: #a15b1a;
+$j4-black: #000000;
+$j4-charcoal: #262626;
+$j4-white: #ffffff;
+
+
+// Fonts 
+h1 {
+   color: $j4-dark-green;
+   font-family: 'Jura', sans-serif;
+}
+
+.container1-h1 {
+   font-size: 60px;
+   
+}
+.container1-p {
+   font-size: 1.5em;
+}
+
+
+// Layout elements
+.container1 {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding-top: 8%;
+   padding-bottom: 8%;
+}
+
+.row1 {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 0 auto;
+}
+
+.row1-col1, .container2-row1-col1 {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   text-align: center;
+   
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.container2 {
+   background-image: url("https://cdn.99images.com/photos/wallpapers/3d-abstract/black-art-hd%20android-iphone-desktop-hd-backgrounds-wallpapers-1080p-4k-s0tql.jpg");
+   padding-top: 20%;
+   padding-bottom: 20%;
+}
+
+.container2-h2 {
+   color: $j4-white;
+}
+
+.container2-p {
+   color: $j4-light-orange;
+}
+
