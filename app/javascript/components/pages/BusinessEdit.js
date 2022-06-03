@@ -10,7 +10,7 @@ class BusinessEdit extends Component{
         business_name: this.props.business.business_name,
         business_description: this.props.business.business_description,
         business_email_address: this.props.business.business_email_address,
-        business_mail_address: this.props.business.business_mail_address,
+        business_mailing_address: this.props.business.business_mailing_address,
         business_phone_number: this.props.business.business_phone_number,
         business_logo: this.props.business.business_logo,
         business_url: this.props.business.business_url,
@@ -71,9 +71,9 @@ class BusinessEdit extends Component{
                 <Label>Business Mailing Address</Label>
                 <Input
                   type="text"
-                  name="business_mail_address"
+                  name="business_mailing_address"
                   onChange={ this.handleChange }
-                  value={ this.state.form.business_mail_address }
+                  value={ this.state.form.business_mailing_address }
                 />
               </FormGroup>
               <FormGroup>
@@ -113,7 +113,7 @@ class BusinessEdit extends Component{
             </Form>
           </div>
         </div>
-        { this.state.submitted && <Redirect to="/myapartments" /> }
+        { this.state.submitted && <Redirect to="/mylisting" /> }
       </>
     )
   }
