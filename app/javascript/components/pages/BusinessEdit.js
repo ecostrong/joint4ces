@@ -7,14 +7,14 @@ class BusinessEdit extends Component{
     super(props)
     this.state = {
       form:{
-        business_name: this.props.business_name,
-        business_description: this.props.business_description,
-        business_email_address: this.props.business_email_address,
-        business_mail_address: this.props.business_mail_address,
-        business_phone_number: this.props.business_phone_number,
-        business_logo: this.props.business_logo,
-        business_url: this.props.business_url,
-        // user_id: this.props.current_user.id
+        business_name: this.props.business.business_name,
+        business_description: this.props.business.business_description,
+        business_email_address: this.props.business.business_email_address,
+        business_mail_address: this.props.business.business_mail_address,
+        business_phone_number: this.props.business.business_phone_number,
+        business_logo: this.props.business.business_logo,
+        business_url: this.props.business.business_url,
+        user_id: this.props.current_user.id
       },
       submitted: false
     }
@@ -27,7 +27,8 @@ class BusinessEdit extends Component{
     console.log(form)
   }
 
-  handleSubmit = () => {
+  handleSubmit = (e) => {
+    e.preventDefault()
     this.props.editBusiness(this.state.form, this.props.business.id)
     this.setState({ submitted: true })
   }

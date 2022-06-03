@@ -57,6 +57,29 @@ class App extends React.Component {
       });
   };
 
+  editBusiness = (business, id) => {
+    fetch(`/businesses/${id}`, {
+      body: JSON.stringify(business),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "PATCH",
+    })
+      .then((response) => {
+        console.log(response);
+        if (response.status === 422) {
+          alert("There is something wrong with your submission.");
+        }
+        return response.json();
+      })
+      .then(() => {
+        this.indexBusinesses();
+      })
+      .catch((errors) => {
+        console.log("edit errors:", errors);
+      });
+  };
+
   deleteBusiness = (id) => {
     fetch(`/businesses/${id}`, {
       headers: {
@@ -97,7 +120,24 @@ class App extends React.Component {
               return <BusinessShow business={business} {...props} />;
             }}
           />
-          <Route path="/businessedit" component={BusinessEdit} />
+          {/* <Route path="/businessedit" component={BusinessEdit} /> */}
+          <Route
+            path="/businessedit/:id"
+            render={(props) => {
+              const id = +props.match.params.id;
+              const business = this.state.businesses.find(
+                (business) => business.id === id
+              );
+              return (
+                <BusinessEdit
+                  business={business}
+                  editBusiness={this.editBusiness}
+                  current_user={this.props.current_user}
+                  {...props}
+                />
+              );
+            }}
+          />
           <Route
             path="/businesses/new"
             render={(props) => {
@@ -112,22 +152,21 @@ class App extends React.Component {
           />
           {logged_in && (
             <Route
-            path="/mylisting"
-            render={(props) => {
-              const myBusiness = this.state.businesses.filter(
-                (business) => business.user_id === current_user.id
-              );
+              path="/mylisting"
+              render={(props) => {
+                const myBusiness = this.state.businesses.filter(
+                  (business) => business.user_id === current_user.id
+                );
 
-              return (
-                <MyListing
-                  myBusiness={myBusiness}
-                  deleteBusiness={this.deleteBusiness}
-                  current_user={current_user}
-                  
-                />
-              );
-            }}
-          />
+                return (
+                  <MyListing
+                    myBusiness={myBusiness}
+                    deleteBusiness={this.deleteBusiness}
+                    current_user={current_user}
+                  />
+                );
+              }}
+            />
           )}
 
           <Route path="/about" component={About} />
