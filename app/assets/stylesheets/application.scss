@@ -30,7 +30,7 @@ h1 {
 
 
 // Layout elements
-.container1 {
+.container1, .container3-row2, .container3 {
    display: flex;
    justify-content: center;
    align-items: center;
@@ -76,3 +76,13 @@ h1 {
    color: $j4-light-orange;
 }
 
+.container3-row1-col1 h2 {
+   text-align: center;
+}
+
+.container3 {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
