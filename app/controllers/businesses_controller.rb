@@ -2,6 +2,8 @@ class BusinessesController < ApplicationController
 
     def index 
         businesses = Business.all 
+        puts "fubar"
+        puts businesses
         render json: businesses
     end
 
