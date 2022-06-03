@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Header from "./components/Header";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
@@ -57,6 +56,28 @@ class App extends React.Component {
       });
   };
 
+  editBusiness = (business, id) => {
+    fetch(`/businesses/${id}`, {
+      body: JSON.stringify(business),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "PATCH",
+    })
+      .then((response) => {
+        if (response.status === 422) {
+          alert("There is something wrong with your submission.");
+        }
+        return response.json();
+      })
+      .then(() => {
+        this.indexBusinesses();
+      })
+      .catch((errors) => {
+        console.error("edit errors:", errors);
+      });
+  };
+
   deleteBusiness = (id) => {
     fetch(`/businesses/${id}`, {
       headers: {
@@ -97,14 +118,30 @@ class App extends React.Component {
               return <BusinessShow business={business} {...props} />;
             }}
           />
-          <Route path="/businessedit" component={BusinessEdit} />
+          <Route
+            path="/businessedit/:id"
+            render={(props) => {
+              const id = +props.match.params.id;
+              const business = this.state.businesses.find(
+                (business) => business.id === id
+              );
+              return (
+                <BusinessEdit
+                  business={business}
+                  editBusiness={this.editBusiness}
+                  current_user={this.props.current_user}
+                  {...props}
+                />
+              );
+            }}
+          />
           <Route
             path="/businesses/new"
             render={(props) => {
               return (
                 <BusinessNew
                   createNewBusiness={this.createNewBusiness}
-                  current_user={current_user}
+                  current_user={this.props.current_user}
                   {...props}
                 />
               );
@@ -117,18 +154,16 @@ class App extends React.Component {
                 const myBusiness = this.state.businesses.filter(
                   (business) => business.user_id === current_user.id
                 );
-
                 return (
                   <MyListing
                     myBusiness={myBusiness}
                     deleteBusiness={this.deleteBusiness}
-                    current_user={this.props.current_user}
+                    current_user={current_user}
                   />
                 );
               }}
             />
           )}
-
           <Route path="/about" component={About} />
           <Route path="/notfound" component={NotFound} />
         </Switch>

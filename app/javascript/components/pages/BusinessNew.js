@@ -10,7 +10,7 @@ export default class BusinessNew extends Component {
         business_name: "",
         business_description: "",
         business_email_address: "",
-        business_mail_address: "",
+        business_mailing_address: "",
         business_phone_number: "",
         business_logo: "",
         business_url: "", 
@@ -68,9 +68,9 @@ export default class BusinessNew extends Component {
             <Label>Business Mailing Address</Label>
             <Input 
               type="textarea"
-              name="business_mail_address"
+              name="business_mailing_address"
               onChange={this.handleChange}
-              value={this.state.form.business_mail_address}
+              value={this.state.form.business_mailing_address}
             />
           </FormGroup>
           <FormGroup>
