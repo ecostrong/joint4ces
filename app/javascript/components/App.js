@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Header from "./components/Header";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
@@ -66,7 +65,6 @@ class App extends React.Component {
       method: "PATCH",
     })
       .then((response) => {
-        console.log(response);
         if (response.status === 422) {
           alert("There is something wrong with your submission.");
         }
@@ -76,7 +74,7 @@ class App extends React.Component {
         this.indexBusinesses();
       })
       .catch((errors) => {
-        console.log("edit errors:", errors);
+        console.error("edit errors:", errors);
       });
   };
 
@@ -120,7 +118,6 @@ class App extends React.Component {
               return <BusinessShow business={business} {...props} />;
             }}
           />
-          {/* <Route path="/businessedit" component={BusinessEdit} /> */}
           <Route
             path="/businessedit/:id"
             render={(props) => {
@@ -157,7 +154,6 @@ class App extends React.Component {
                 const myBusiness = this.state.businesses.filter(
                   (business) => business.user_id === current_user.id
                 );
-
                 return (
                   <MyListing
                     myBusiness={myBusiness}
@@ -168,7 +164,6 @@ class App extends React.Component {
               }}
             />
           )}
-
           <Route path="/about" component={About} />
           <Route path="/notfound" component={NotFound} />
         </Switch>

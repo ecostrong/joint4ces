@@ -24,7 +24,6 @@ class BusinessEdit extends Component{
     const { form } = this.state
     form[e.target.name] = e.target.value
     this.setState({ form: form })
-    console.log(form)
   }
 
   handleSubmit = (e) => {
