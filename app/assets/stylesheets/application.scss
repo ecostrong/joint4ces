@@ -98,7 +98,7 @@ h1 {
    display: flex;
    align-items: center;
    flex-direction: column;
-   margin-top: 30vh;
+   margin-top: 10vh;
 }
 
 .actions {
@@ -112,4 +112,31 @@ button, [type="button"], [type="reset"], [type="submit"] {
    background-color: $j4-light-orange!important;
    border: none;
    color: $j4-white;
+   border-radius: 5px!important;
+   width: 400px;
+   height: 40px;
+}
+
+input#user_email {
+   border: 3px #b4b4b4 solid;
+   border-radius: 5px;
+   width: 400px;
+   height: 40px;
+}
+
+input#user_password {
+   border: 3px #b4b4b4 solid;
+   border-radius: 5px;
+   width: 400px;
+   height: 40px;
+}
+
+.signin-h2 {
+   margin-top: 50px;
+}
+
+.signin-container a {
+   color: #888888;
+   margin-top: 15px;
+   text-decoration: none;
 }
