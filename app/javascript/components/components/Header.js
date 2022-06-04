@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import LOGO from '../assets/joint4ces_logo.jpg'
-import { NavItem, Nav, NavbarBrand, Navbar } from 'reactstrap'
-import { NavLink } from 'react-router-dom'
+import React, { Component } from "react";
+import LOGO from "../assets/joint4ces_logo.jpg";
+import { NavItem, Nav, NavbarBrand, Navbar } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 export default class Header extends Component {
   render() {
@@ -10,67 +10,76 @@ export default class Header extends Component {
       current_user,
       new_user_route,
       sign_in_route,
-      sign_out_route
-    } = this.props
+      sign_out_route,
+    } = this.props;
 
     return (
       <>
-        <NavbarBrand to="#home">
-          <img
-            src={LOGO}
-            width="100"
-            height="100"
-            className="d-inline-block align-top"
-            alt="Joint 4ces logo"
-          />
-        </NavbarBrand>
-        <Navbar
-          className='navbarStyle'
-          container
-          expand="lg"
-          light
-        >
-         
-            <div className="container">
+        <Navbar className="navbarStyle" container expand="lg" bg="light">
+          <Navbar.Brand to="#home">
+            <img
+              src={LOGO}
+              width="100"
+              height="100"
+              className="d-inline-block align-top"
+              alt="Joint 4ces logo"
+            />
+          </Navbar.Brand>
 
-                <Nav className="ms-auto" bg="light" expand="lg">
+          <div className="container">
+            <Nav className="ms-auto" bg="light" expand="lg">
+              <NavItem>
+                <NavLink to="/" className="nav-link">
+                  Home
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to="/businesses/new" className="nav-link">
+                  Create a Business
+                </NavLink>
+              </NavItem>
+              {logged_in && (
+                <NavItem>
+                  <NavLink to="/mylisting" className="nav-link">
+                    My Listing
+                  </NavLink>
+                </NavItem>
+              )}
+              <NavItem>
+                <NavLink to="/businessindex" className="nav-link">
+                  Business Listings
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to="/about" className="nav-link">
+                  About
+                </NavLink>
+              </NavItem>
+              {logged_in && (
+                <NavItem>
+                  <a id="sign_out" href={sign_out_route} className="nav-link">
+                    Sign Out
+                  </a>
+                </NavItem>
+              )}
+              {!logged_in && (
+                <>
                   <NavItem>
-                    <NavLink to='/'>Home</NavLink>
+                    <a id="sign_in" href={sign_in_route} className="nav-link">
+                      Sign In
+                    </a>
                   </NavItem>
                   <NavItem>
-                    <NavLink to='/businesses/new'>Create a Business</NavLink>
+                    <a href={new_user_route} className="nav-link">
+                      Sign Up
+                    </a>
                   </NavItem>
-                  {logged_in &&
-                    <NavItem>
-                      <NavLink to='/mylisting'>My Listing</NavLink>
-                    </NavItem>
-                  }
-                  <NavItem>
-                    <NavLink to='/businessindex'>Business Listings</NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink to='/about'>About</NavLink>
-                  </NavItem>
-                  {logged_in &&
-                    <NavItem>
-                      <a id="sign_out" href={sign_out_route} className="nav-link">Sign Out</a>
-                    </NavItem>
-                  }
-                  {!logged_in &&
-                  <>
-                    <NavItem>
-                      <a id="sign_in" href={sign_in_route} className="nav-link">Sign In</a>
-                    </NavItem>
-                    <NavItem>
-                    <a href={new_user_route} className="nav-link">Sign Up</a>
-                  </NavItem>
-                  </>
-                  }
-                </Nav>
-            </div>
-          
+                </>
+              )}
+            </Nav>
+          </div>
         </Navbar>
       </>
-    )
+    );
   }
 }

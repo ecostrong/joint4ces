@@ -30,6 +30,11 @@ h1 {
 
 
 // Layout elements
+
+.navbarStyle {
+   padding-left: 2vw;
+   padding-right: 2vw;
+}
 .container1, .container3-row2, .container3 {
    display: flex;
    justify-content: center;
@@ -85,4 +90,26 @@ h1 {
    justify-content: center;
    align-items: center;
    flex-direction: column;
+}
+
+//  Sign Up Page -  Devise
+.signin-container {
+   width: 100vw;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   margin-top: 30vh;
+}
+
+.actions {
+   background-color: $j4-light-orange!important;
+   display: flex;
+   justify-content: center;
+}
+
+button, [type="button"], [type="reset"], [type="submit"] {
+   -webkit-appearance: none;
+   background-color: $j4-light-orange!important;
+   border: none;
+   color: $j4-white;
 }
