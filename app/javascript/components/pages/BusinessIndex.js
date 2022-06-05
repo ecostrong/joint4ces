@@ -1,41 +1,40 @@
 import React, { Component } from "react";
-import { Card, CardTitle,CardBody, CardSubtitle, CardText, CardLink } from "reactstrap";
 import { NavLink } from 'react-router-dom'
-
+import { Card, Container } from 'react-bootstrap'
 export default class BusinessIndex extends Component {
   render() {
     return (
-      <>
-        <h1>Index</h1>
+      <Container style={{marginTop: "126px", display: "flex", flexWrap: "wrap"}}>
+        
         {this.props.businesses?.map((business, i) => {
           return (
             <div key={i}>
-              <Card>
-                <CardBody>
+              <Card style={{ width: '18rem', margin: "10px", padding: "10px", textAlign: "center" }}> 
+                <Card.Body>
                   <NavLink to={`/business/${business.id}`}>
-                  <CardTitle tag="h5">{business.business_name}</CardTitle>
+                  <Card.Title tag="h5" style={{color: "#565e45"}}>{business.business_name}</Card.Title>
                   </NavLink>
-                  <CardSubtitle className="mb-2 text-muted" tag="h6">
+                  <Card.Subtitle className="mb-2 text-muted" tag="h6">
                     {business.business_email_address}
-                  </CardSubtitle>
-                </CardBody>
+                  </Card.Subtitle>
+                </Card.Body>
                 <img
                   alt="Card image cap"
                   src={business.business_logo}
                   width="100%"
                 />
-                <CardBody>
-                  <CardText>
+                <Card.Body>
+                  <Card.Text>
                     {business.business_description}
-                  </CardText>
-                  <CardLink href="#">Card Link</CardLink>
-                  <CardLink href="#">Another Link</CardLink>
-                </CardBody>
+                  </Card.Text>
+                  {/* <Card.Link href="#">Card Link</Card.Link>
+                  <Card.Link href="#">Another Link</Card.Link> */}
+                </Card.Body>
               </Card>
             </div>
           );
         })}
-      </>
+      </Container>
     );
   }
 }

@@ -19,7 +19,9 @@ h1 {
    color: $j4-dark-green;
    font-family: 'Jura', sans-serif;
 }
-
+a {
+   text-decoration: none!important;
+}
 h2 {
    font-weight: 500;
    color: #383838;
