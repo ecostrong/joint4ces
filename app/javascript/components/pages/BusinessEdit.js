@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Button, Form, FormGroup, Input, Label } from 'reactstrap'
+import { Input, Label } from 'reactstrap'
 import { Redirect } from 'react-router-dom'
+import { Container, Button, Form } from 'react-bootstrap'
 
 class BusinessEdit extends Component{
   constructor(props){
@@ -34,12 +35,12 @@ class BusinessEdit extends Component{
 
   render(){
     return(
-      <>
-        <h3>Edit your Business</h3>
+      <Container className="newbusiness-container">
+        <h1>Edit your Business</h1>
         <div className="form-container">
           <div className="form">
             <Form>
-              <FormGroup>
+              <Form.Group>
                 <Label>Business Name</Label>
                 <Input
                   type="text"
@@ -47,8 +48,8 @@ class BusinessEdit extends Component{
                   onChange={ this.handleChange }
                   value={ this.state.form.business_name }
                 />
-              </FormGroup>
-              <FormGroup>
+              </Form.Group>
+              <Form.Group>
                 <Label>Business Description</Label>
                 <Input
                   type="text"
@@ -56,8 +57,8 @@ class BusinessEdit extends Component{
                   onChange={ this.handleChange }
                   value={ this.state.form.business_description }
                 />
-              </FormGroup>
-              <FormGroup>
+              </Form.Group>
+              <Form.Group>
                 <Label>Business Email</Label>
                 <Input
                   type="text"
@@ -65,8 +66,8 @@ class BusinessEdit extends Component{
                   onChange={ this.handleChange }
                   value={ this.state.form.business_email_address }
                 />
-              </FormGroup>
-              <FormGroup>
+              </Form.Group>
+              <Form.Group>
                 <Label>Business Mailing Address</Label>
                 <Input
                   type="text"
@@ -74,8 +75,8 @@ class BusinessEdit extends Component{
                   onChange={ this.handleChange }
                   value={ this.state.form.business_mailing_address }
                 />
-              </FormGroup>
-              <FormGroup>
+              </Form.Group>
+              <Form.Group>
                 <Label>Business Phone Number</Label>
                 <Input
                   type="text"
@@ -83,8 +84,8 @@ class BusinessEdit extends Component{
                   onChange={ this.handleChange }
                   value={ this.state.form.business_phone_number }
                 />
-              </FormGroup>
-              <FormGroup>
+              </Form.Group>
+              <Form.Group>
                 <Label>Business Logo URL address</Label>
                 <Input
                   type="text"
@@ -92,8 +93,8 @@ class BusinessEdit extends Component{
                   onChange={ this.handleChange }
                   value={ this.state.form.business_logo }
                 />
-              </FormGroup>
-              <FormGroup>
+              </Form.Group>
+              <Form.Group>
                 <Label>Business Web URL</Label>
                 <Input
                   type="text"
@@ -101,7 +102,7 @@ class BusinessEdit extends Component{
                   onChange={ this.handleChange }
                   value={ this.state.form.business_url }
                 />
-              </FormGroup>
+              </Form.Group>
               <Button
               name="submit"
               color="secondary"
@@ -113,7 +114,7 @@ class BusinessEdit extends Component{
           </div>
         </div>
         { this.state.submitted && <Redirect to="/mylisting" /> }
-      </>
+      </Container>
     )
   }
 }
