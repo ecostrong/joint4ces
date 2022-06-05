@@ -20,6 +20,9 @@ h1 {
    font-family: 'Jura', sans-serif;
 }
 
+h2 {
+   font-weight: 400;
+}
 .container1-h1 {
    font-size: 60px;
    
@@ -119,6 +122,31 @@ h1 {
    padding-right: 100px;
 }
 
+.footer-container {
+   background-color: $j4-dark-green;
+}
+.footer-text0 {
+   text-align: center;
+   padding-top: 50px;
+   color: white;
+}
+
+.footer-text{
+   text-align: center;
+   width: 100%;
+   color: white;
+   
+}
+.footer-text2{
+   text-align: center;
+   color: white;
+   padding-bottom: 50px;
+   
+}
+.ftext {
+   font-weight: 300;
+   // font-family: 'Jura', sans-serif;
+}
 //  Sign Up Page -  Devise
 .signin-container {
    width: 100vw;

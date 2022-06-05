@@ -16,7 +16,7 @@ export default class Home extends Component {
           <Row className="row1">
             <Col className="row1-col1">
               <h1 className="container1-h1">WELCOME TO JOINT 4CES</h1>
-              <p className="container1-p">The Home Of Veteran Businesses</p>
+              <p className="container1-p">The Home Of Veteran CannaBusinesses</p>
             </Col>
             <Col classNam="row1-col2">
               <img
@@ -32,7 +32,7 @@ export default class Home extends Component {
             <Col className="container2-row1-col1">
               <FaCannabis className="all-icons" />
               <h2 className="container2-h2">
-                THE B2B NETWORKING PLATFORM FOR VETERAN-OWNED BUSINESSES
+                THE B2B NETWORKING PLATFORM FOR VETERAN-OWNED CANNA-BUSINESSES
               </h2>
               <p className="container2-p">
                 Create & Support Strategic Partnerships
