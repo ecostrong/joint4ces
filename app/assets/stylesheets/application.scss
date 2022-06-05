@@ -21,7 +21,29 @@ h1 {
 }
 
 h2 {
+   font-weight: 500;
+   color: #383838;
+}
+
+p {
+   color: #646464;
    font-weight: 400;
+}
+.bg-light {
+   background-color: #ededed!important;
+   opacity: .9;
+}
+
+a.nav-link {
+   color: $j4-charcoal!important;
+   font-family: 'Jura', sans-serif;
+   font-weight: bold;
+   font-size: 1.2em;
+}
+
+a.nav-link:hover {
+   color: $j4-dark-orange!important;
+   text-decoration: underline!important;
 }
 .container1-h1 {
    font-size: 60px;
@@ -60,6 +82,9 @@ h2 {
    padding-bottom: 8%;
 }
 
+.container1 {
+   margin-top: 5%;
+}
 .row1 {
    display: flex;
    justify-content: center;
@@ -103,10 +128,17 @@ h2 {
    font-size: 30px;
 }
 
+.container3-col1, .container3-col2 {
+   padding-right: 50px;
+   margin: 0 auto;
+}
 .container3-row1-col1 h2 {
    text-align: center;
 }
 
+.buffer-top {
+   margin-top: 30px;
+}
 .container3 {
    display: flex;
    justify-content: center;

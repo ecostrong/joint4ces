@@ -60,7 +60,7 @@ export default class Home extends Component {
                 </p>
               </Col>
               <Col className="container3-row2-col2">
-                <FaNetworkWired className="four-icons" />
+                <FaNetworkWired className="four-icons buffer-top" />
                 <h2>Grow Your Network</h2>
                 <p>
                   With high quality businesses who have all been highly vetted,
@@ -68,7 +68,7 @@ export default class Home extends Component {
                 </p>
               </Col>
             </Col>
-            <Col>
+            <Col className="container3-col2">
               <Col className="container3-row2-col1">
                 <FaCalendarAlt className="four-icons" />
                 <h2>Industry & Local Events</h2>
@@ -78,7 +78,7 @@ export default class Home extends Component {
                 </p>
               </Col>
               <Col className="container3-row2-col2">
-                <FaUserAlt className="four-icons" />
+                <FaUserAlt className="four-icons buffer-top" />
                 <h2>Profile System</h2>
                 <p>
                   Maintain a rich profile system and connect with like-minded

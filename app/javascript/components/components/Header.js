@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import LOGO from "../assets/joint4ces_logo.jpg";
+// import LOGO from "../assets/joint4ces_logo.jpg";
 import { NavItem, Nav, NavbarBrand, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
@@ -15,10 +15,10 @@ export default class Header extends Component {
 
     return (
       <>
-        <Navbar className="navbarStyle" container expand="lg" bg="light">
+        <Navbar className="navbarStyle" container expand="lg" bg="light" fixed="top">
           <Navbar.Brand to="#home">
             <img
-              src={LOGO}
+              src="https://joint4ces.com/wp-content/uploads/2021/09/Asset-52_modified4-1024x998.png"
               width="100"
               height="100"
               className="d-inline-block align-top"
