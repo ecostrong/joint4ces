@@ -28,6 +28,20 @@ h1 {
    font-size: 1.5em;
 }
 
+// Icons
+.all-icons {
+   color: $j4-light-green;
+   width: 100px;
+   height: auto;
+   margin-bottom: 40px;
+}
+.four-icons {
+   color: $j4-light-green;
+   width: 40px;
+   height: auto;
+   margin-bottom: 25px;
+
+}
 
 // Layout elements
 
@@ -69,8 +83,11 @@ h1 {
 
 .container2 {
    background-image: url("https://cdn.99images.com/photos/wallpapers/3d-abstract/black-art-hd%20android-iphone-desktop-hd-backgrounds-wallpapers-1080p-4k-s0tql.jpg");
-   padding-top: 20%;
-   padding-bottom: 20%;
+   padding-top: 15%;
+   padding-bottom: 15%;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
 }
 
 .container2-h2 {
@@ -79,6 +96,8 @@ h1 {
 
 .container2-p {
    color: $j4-light-orange;
+   margin-top: 20px;
+   font-size: 30px;
 }
 
 .container3-row1-col1 h2 {
@@ -90,6 +109,14 @@ h1 {
    justify-content: center;
    align-items: center;
    flex-direction: column;
+}
+.divider {
+   border-bottom: 5px solid $j4-light-orange;
+
+}
+.container3-row2 {
+   padding-left: 100px;
+   padding-right: 100px;
 }
 
 //  Sign Up Page -  Devise
