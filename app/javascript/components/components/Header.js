@@ -33,11 +33,13 @@ export default class Header extends Component {
                   Home
                 </NavLink>
               </NavItem>
+              {logged_in && (
               <NavItem>
                 <NavLink to="/businesses/new" className="nav-link">
                   Create a Business
                 </NavLink>
               </NavItem>
+              )}
               {logged_in && (
                 <NavItem>
                   <NavLink to="/mylisting" className="nav-link">
