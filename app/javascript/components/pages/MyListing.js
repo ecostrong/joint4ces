@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import { Row, Col, Card, Button } from "reactstrap";
 import {NavLink} from 'react-router-dom'
+import { Container, Card, Row, Col, Button } from "react-bootstrap";
 
 export default class MyListing extends Component {
   render() {
     const {myBusiness} = this.props
     return (
-      <>
-        <h3>My Business Listing</h3>
+      <Container fluid style={{marginTop: "126px"}}>
+        <h3 style={{padding: "20px"}}>My Business Listing</h3>
         {myBusiness &&
-        <Card>
+        <Card style={{width: "40vw", padding: "20px", margin: "20px", textAlign: "center"}}>
           <Row className="cards">
             {myBusiness?.map((business) => {
               return (
@@ -20,13 +20,13 @@ export default class MyListing extends Component {
                     <h6>{business.business_mailing_address}</h6>
                     <h6>{business.business_email_address}</h6>
                     <h6>{business.business_phone_number}</h6>
-                     <img src={business.business_logo}/>
+                     <img src={business.business_logo} width="75%"/>
                     <h5>{business.business_url}</h5>
                     <p className="my-card-button">
-                      <NavLink to={`/businessedit/${business.id}`}>
-                        <button color="secondary">
+                      <NavLink to={`/businessedit/${business.id}`} >
+                      <button color="secondary" style={{margin: "20px"}}>
                           Update Listing
-                        </button>
+                      </button>
                       </NavLink>
                       <NavLink to="/businessindex">
                         <Button onClick={() => this.props.deleteBusiness(business.id)} >
@@ -40,7 +40,7 @@ export default class MyListing extends Component {
             })}
           </Row>
         </Card>}
-      </>
+      </Container>
     );
   }
 }
