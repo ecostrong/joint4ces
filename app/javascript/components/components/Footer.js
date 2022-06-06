@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Container } from "react-bootstrap";
-// import { Container } from 'reactstrap'
 
 export default class Footer extends Component {
   render() {

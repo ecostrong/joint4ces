@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-// import LOGO from "../assets/joint4ces_logo.jpg";
-import { NavItem, Nav, NavbarBrand, Navbar } from "react-bootstrap";
+import { NavItem, Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
 export default class Header extends Component {
