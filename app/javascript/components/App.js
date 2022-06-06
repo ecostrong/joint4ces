@@ -165,7 +165,7 @@ class App extends React.Component {
             />
           )}
           <Route path="/about" component={About} />
-          <Route path="/notfound" component={NotFound} />
+          <Route component={NotFound} />
         </Switch>
         <Footer />
       </Router>
