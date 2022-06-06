@@ -1,5 +1,12 @@
 import React, { Component } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import {
+  FaCalendarAlt,
+  FaCannabis,
+  FaListAlt,
+  FaNetworkWired,
+  FaUserAlt,
+} from "react-icons/fa";
 
 export default class Home extends Component {
   render() {
@@ -9,7 +16,7 @@ export default class Home extends Component {
           <Row className="row1">
             <Col className="row1-col1">
               <h1 className="container1-h1">WELCOME TO JOINT 4CES</h1>
-              <p className="container1-p">The Home Of Veteran Businesses</p>
+              <p className="container1-p">The Home Of Veteran CannaBusinesses</p>
             </Col>
             <Col classNam="row1-col2">
               <img
@@ -23,8 +30,9 @@ export default class Home extends Component {
         <Container className="container2" fluid>
           <Row className="container2-row1">
             <Col className="container2-row1-col1">
+              <FaCannabis className="all-icons" />
               <h2 className="container2-h2">
-                THE B2B NETWORKING PLATFORM FOR VETERAN-OWNED BUSINESSES
+                THE B2B NETWORKING PLATFORM FOR VETERAN-OWNED CANNA-BUSINESSES
               </h2>
               <p className="container2-p">
                 Create & Support Strategic Partnerships
@@ -35,13 +43,16 @@ export default class Home extends Component {
         <Container className="container3" fluid>
           <Row className="container3-row1">
             <Col className="container3-row1-col1">
-              <h2>ADVERTISE, STRATEGIZE & ORGANIZE</h2>
+              <div className="divider">
+                <h2>ADVERTISE, STRATEGIZE & ORGANIZE</h2>
+              </div>
             </Col>
           </Row>
 
           <Row className="container3-row2">
             <Col className="container3-col1">
               <Col className="container3-row2-col1">
+                <FaListAlt className="four-icons" />
                 <h2>Exclusive Veteran Business Directory</h2>
                 <p>
                   All listed businesses are verified by our team and align with
@@ -49,6 +60,7 @@ export default class Home extends Component {
                 </p>
               </Col>
               <Col className="container3-row2-col2">
+                <FaNetworkWired className="four-icons buffer-top" />
                 <h2>Grow Your Network</h2>
                 <p>
                   With high quality businesses who have all been highly vetted,
@@ -56,17 +68,21 @@ export default class Home extends Component {
                 </p>
               </Col>
             </Col>
-            <Col>
+            <Col className="container3-col2">
               <Col className="container3-row2-col1">
+                <FaCalendarAlt className="four-icons" />
                 <h2>Industry & Local Events</h2>
                 <p>
-                Meet Joint 4ces at local gatherings and find connections at network events across the nation.
+                  Meet Joint 4ces at local gatherings and find connections at
+                  network events across the nation.
                 </p>
               </Col>
               <Col className="container3-row2-col2">
+                <FaUserAlt className="four-icons buffer-top" />
                 <h2>Profile System</h2>
                 <p>
-                Maintain a rich profile system and connect with like-minded entrepreneurs in the network.
+                  Maintain a rich profile system and connect with like-minded
+                  entrepreneurs in the network.
                 </p>
               </Col>
             </Col>

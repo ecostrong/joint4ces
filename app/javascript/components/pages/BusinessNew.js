@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { Button, Form, FormGroup, Input, Label } from 'reactstrap'
+import { Input, Label } from 'reactstrap'
 import { Redirect } from 'react-router-dom'
-
+import {Button, Container, Form, } from 'react-bootstrap'
 export default class BusinessNew extends Component {
   constructor(props) {
     super(props)
@@ -34,10 +34,10 @@ export default class BusinessNew extends Component {
   
   render() {
     return (
-      <>
-        <h1>Joint4ces Business Listings</h1>
+      <Container className="newbusiness-container">
+        <h1>Create a New Business Listing</h1>
         <Form>
-          <FormGroup>
+          <Form.Group>
             <Label>Business Name</Label>
             <Input 
               type="text"
@@ -45,8 +45,8 @@ export default class BusinessNew extends Component {
               onChange={this.handleChange}
               value={this.state.form.business_name}
             />
-          </FormGroup>
-          <FormGroup>
+          </Form.Group>
+          <Form.Group>
             <Label>Business Description</Label>
             <Input 
               type="text"
@@ -54,8 +54,8 @@ export default class BusinessNew extends Component {
               onChange={this.handleChange}
               value={this.state.form.business_description}
             />
-          </FormGroup>
-          <FormGroup>
+          </Form.Group>
+          <Form.Group>
             <Label>Business Email Address</Label>
             <Input 
               type="text"
@@ -63,8 +63,8 @@ export default class BusinessNew extends Component {
               onChange={this.handleChange}
               value={this.state.form.business_email_address}
             />
-          </FormGroup>
-          <FormGroup>
+          </Form.Group>
+          <Form.Group>
             <Label>Business Mailing Address</Label>
             <Input 
               type="textarea"
@@ -72,8 +72,8 @@ export default class BusinessNew extends Component {
               onChange={this.handleChange}
               value={this.state.form.business_mailing_address}
             />
-          </FormGroup>
-          <FormGroup>
+          </Form.Group>
+          <Form.Group>
             <Label>Business Phone Number</Label>
             <Input 
               type="text"
@@ -81,8 +81,8 @@ export default class BusinessNew extends Component {
               onChange={this.handleChange}
               value={this.state.form.business_phone_number}
             />
-          </FormGroup>
-          <FormGroup>
+          </Form.Group>
+          <Form.Group>
             <Label>Business Logo</Label>
             <Input 
               type="text"
@@ -90,8 +90,8 @@ export default class BusinessNew extends Component {
               onChange={this.handleChange}
               value={this.state.form.business_logo}
             />
-          </FormGroup>
-          <FormGroup>
+          </Form.Group>
+          <Form.Group>
             <Label>Business Url</Label>
             <Input 
               type="text"
@@ -99,7 +99,7 @@ export default class BusinessNew extends Component {
               onChange={this.handleChange}
               value={this.state.form.business_url}
             />
-          </FormGroup>
+          </Form.Group>
           <Button 
             name="submit"
             type="submit"
@@ -109,7 +109,7 @@ export default class BusinessNew extends Component {
             </Button>
         </Form>
         {this.state.submitted && <Redirect to="/mylisting" />}
-      </>
+      </Container>
     )
   }
 }

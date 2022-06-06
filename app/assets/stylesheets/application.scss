@@ -19,7 +19,34 @@ h1 {
    color: $j4-dark-green;
    font-family: 'Jura', sans-serif;
 }
+a {
+   text-decoration: none!important;
+}
+h2 {
+   font-weight: 500;
+   color: #383838;
+}
 
+p {
+   color: #646464;
+   font-weight: 400;
+}
+.bg-light {
+   background-color: #ededed!important;
+   opacity: .9;
+}
+
+a.nav-link {
+   color: $j4-charcoal!important;
+   font-family: 'Jura', sans-serif;
+   font-weight: bold;
+   font-size: 1.2em;
+}
+
+a.nav-link:hover {
+   color: $j4-dark-orange!important;
+   text-decoration: underline!important;
+}
 .container1-h1 {
    font-size: 60px;
    
@@ -28,8 +55,27 @@ h1 {
    font-size: 1.5em;
 }
 
+// Icons
+.all-icons {
+   color: $j4-light-green;
+   width: 100px;
+   height: auto;
+   margin-bottom: 40px;
+}
+.four-icons {
+   color: $j4-light-green;
+   width: 40px;
+   height: auto;
+   margin-bottom: 25px;
+
+}
 
 // Layout elements
+
+.navbarStyle {
+   padding-left: 2vw;
+   padding-right: 2vw;
+}
 .container1, .container3-row2, .container3 {
    display: flex;
    justify-content: center;
@@ -38,6 +84,9 @@ h1 {
    padding-bottom: 8%;
 }
 
+.container1 {
+   margin-top: 126px;
+}
 .row1 {
    display: flex;
    justify-content: center;
@@ -60,12 +109,16 @@ h1 {
   bottom: 0;
   width: 100%;
   text-align: center;
+  
 }
 
 .container2 {
    background-image: url("https://cdn.99images.com/photos/wallpapers/3d-abstract/black-art-hd%20android-iphone-desktop-hd-backgrounds-wallpapers-1080p-4k-s0tql.jpg");
-   padding-top: 20%;
-   padding-bottom: 20%;
+   padding-top: 15%;
+   padding-bottom: 15%;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
 }
 
 .container2-h2 {
@@ -74,15 +127,126 @@ h1 {
 
 .container2-p {
    color: $j4-light-orange;
+   margin-top: 20px;
+   font-size: 30px;
 }
 
+.container3-col1, .container3-col2 {
+   padding-right: 50px;
+   margin: 0 auto;
+}
 .container3-row1-col1 h2 {
    text-align: center;
 }
 
+.buffer-top {
+   margin-top: 30px;
+}
 .container3 {
    display: flex;
    justify-content: center;
    align-items: center;
    flex-direction: column;
+}
+.divider {
+   border-bottom: 5px solid $j4-light-orange;
+
+}
+.container3-row2 {
+   padding-left: 100px;
+   padding-right: 100px;
+}
+
+.footer-container {
+   background-color: $j4-dark-green;
+}
+.footer-text0 {
+   text-align: center;
+   padding-top: 50px;
+   color: white;
+}
+
+.footer-text{
+   text-align: center;
+   width: 100%;
+   color: white;
+   
+}
+.footer-text2{
+   text-align: center;
+   color: white;
+   padding-bottom: 50px;
+   
+}
+.ftext {
+   font-weight: 300;
+   // font-family: 'Jura', sans-serif;
+}
+//  Sign Up Page -  Devise
+.signin-container {
+   width: 100vw;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   margin-top: 10vh;
+}
+
+.actions {
+   background-color: $j4-light-orange!important;
+   display: flex;
+   justify-content: center;
+}
+
+button, [type="button"], [type="reset"], [type="submit"] {
+   -webkit-appearance: none;
+   background-color: $j4-light-orange!important;
+   border: none;
+   color: $j4-white;
+   border-radius: 5px!important;
+   width: 400px;
+   height: 40px;
+}
+
+input#user_email {
+   border: 3px #b4b4b4 solid;
+   border-radius: 5px;
+   width: 400px;
+   height: 40px;
+}
+
+input#user_password {
+   border: 3px #b4b4b4 solid;
+   border-radius: 5px;
+   width: 400px;
+   height: 40px;
+}
+
+.signin-h2 {
+   margin-top: 50px;
+}
+
+.signin-container a {
+   color: #888888;
+   margin-top: 15px;
+   text-decoration: none;
+}
+
+.newbusiness-container {
+   margin-top: 10%;
+   padding: 0 10% 10% 10%;
+}
+
+.card-img-top {
+   border-radius: 10px;
+}
+
+.card-container {
+   margin: 0 auto;
+   justify-content: center;
+   
+}
+
+.about-card {
+   margin: 10px;
+   padding: 10px;
 }
