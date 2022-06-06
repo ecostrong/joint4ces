@@ -16,8 +16,16 @@ export default class About extends Component {
         <h1 style={{ marginTop: "40px", marginBottom: "40px" }}>
           About The Team
         </h1>
-        <div className="card-container" style={{display: "flex", flexWrap: "wrap", flexDirection: "row", width: "100vw"}}>
-          <Card className="about-card" style={{width: "30rem"}}>
+        <div
+          className="card-container"
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            flexDirection: "row",
+            width: "100vw",
+          }}
+        >
+          <Card className="about-card" style={{ width: "30rem" }}>
             <Card.Img variant="top" src={SUNNY} />
             <Card.Body>
               <Card.Title>Sunny</Card.Title>
@@ -31,7 +39,7 @@ export default class About extends Component {
             </Card.Body>
           </Card>
 
-          <Card className="about-card"  style={{width: "30rem"}}>
+          <Card className="about-card" style={{ width: "30rem" }}>
             <Card.Img variant="top" src={DUSTIN} />
             <Card.Body>
               <Card.Title>Dustin</Card.Title>
@@ -50,7 +58,7 @@ export default class About extends Component {
               </Card.Text>
             </Card.Body>
           </Card>
-          <Card className="about-card"  style={{width: "30rem"}}>
+          <Card className="about-card" style={{ width: "30rem" }}>
             <Card.Img variant="top" src={AMANDA} />
             <Card.Body>
               <Card.Title>Amanda</Card.Title>
@@ -61,7 +69,7 @@ export default class About extends Component {
               </Card.Text>
             </Card.Body>
           </Card>
-          <Card className="about-card"  style={{width: "30rem"}}>
+          <Card className="about-card" style={{ width: "30rem" }}>
             <Card.Img variant="top" src={JIMMY} />
             <Card.Body>
               <Card.Title>Jimmy</Card.Title>
@@ -76,23 +84,23 @@ export default class About extends Component {
               </Card.Text>
             </Card.Body>
           </Card>
-          <Card className="about-card"  style={{width: "30rem"}}>
+          <Card className="about-card" style={{ width: "30rem" }}>
             <Card.Img variant="top" src={NECO} />
             <Card.Body>
               <Card.Title>Neco</Card.Title>
               <Card.Text>
-                Neco Armstrong Jun 3 at 1:18 PM (edited) Necocli is a proud
-                veteran of the United States Virgin Islands. She served as an
-                Army Medical Service Corps Officer with a specialization in
-                Healthcare Administration. Necocli has a Master of Arts in Human
-                Resources Management from Webster University and a Bachelor of
-                Arts in Global Studies from the University of California, Santa
-                Barbara. She has previously worked with the Wounded Warrior
-                Transition Program, the Department of Labor, the National Park
-                Service, and the Government of the Virgin Islands. Necocli is a
-                multi-passionate web developer who brings two decades of
-                military and government expertise to every project and her
-                unique voice to the tech industry.
+                Necocli is a proud veteran of the United States Virgin Islands.
+                She served as an Army Medical Service Corps Officer with a
+                specialization in Healthcare Administration. Necocli has a
+                Master of Arts in Human Resources Management from Webster
+                University and a Bachelor of Arts in Global Studies from the
+                University of California, Santa Barbara. She has previously
+                worked with the Wounded Warrior Transition Program, the
+                Department of Labor, the National Park Service, and the
+                Government of the Virgin Islands. Necocli is a multi-passionate
+                web developer who brings two decades of military and government
+                expertise to every project and her unique voice to the tech
+                industry.
               </Card.Text>
             </Card.Body>
           </Card>

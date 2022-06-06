@@ -27,8 +27,6 @@ export default class BusinessIndex extends Component {
                   <Card.Text>
                     {business.business_description}
                   </Card.Text>
-                  {/* <Card.Link href="#">Card Link</Card.Link>
-                  <Card.Link href="#">Another Link</Card.Link> */}
                 </Card.Body>
               </Card>
             </div>
