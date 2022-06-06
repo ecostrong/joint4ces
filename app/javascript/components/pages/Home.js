@@ -18,7 +18,7 @@ export default class Home extends Component {
               <h1 className="container1-h1">WELCOME TO JOINT 4CES</h1>
               <p className="container1-p">The Home Of Veteran CannaBusinesses</p>
             </Col>
-            <Col classNam="row1-col2">
+            <Col className="row1-col2">
               <img
                 src="https://joint4ces.com/wp-content/uploads/2021/09/Asset-52_modified4-1024x998.png"
                 width="300px"

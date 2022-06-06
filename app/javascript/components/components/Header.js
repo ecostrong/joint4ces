@@ -24,7 +24,6 @@ export default class Header extends Component {
               alt="Joint 4ces logo"
             />
           </Navbar.Brand>
-
           <div className="container">
             <Nav className="ms-auto" bg="light" expand="lg">
               <NavItem>
@@ -33,11 +32,11 @@ export default class Header extends Component {
                 </NavLink>
               </NavItem>
               {logged_in && (
-              <NavItem>
-                <NavLink to="/businesses/new" className="nav-link">
-                  Create a Business
-                </NavLink>
-              </NavItem>
+                <NavItem>
+                  <NavLink to="/businesses/new" className="nav-link">
+                    Create a Business
+                  </NavLink>
+                </NavItem>
               )}
               {logged_in && (
                 <NavItem>
